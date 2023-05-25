@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contratos</title>
+    <link rel="stylesheet" href="contratos.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet">
+</head>
+<script>
+function generar(){
+//Crear un objeto o instancia jsPDF
+var doc = new jsPDF();
+
+//Definir el tamaño de la letra
+doc.setFontSize(40);
+//Color del texto
+doc.setTextColor(9,7,121);
+doc.text(40, 20, "Encuesta");
+doc.setTextColor(17, 122, 209); //Color en formato RGB
+doc.setFontSize(30);
+doc.text(50, 35, "Es importante tu participacion"); //Ubicación, Texto
+doc.setTextColor(0,0,0);
+doc.setFontSize(20);
+doc.text(20, 50, "20 puntos. Excelente. \r Todas tus respuestas son correctas");
+doc.text(20, 70, "15 puntos. Muy bien. \r Obtuviste 3 preguntas correctas");
+doc.text(20, 90, "10 puntos. Regular \r Obtuviste 2 preguntas correctas");
+doc.text(20, 110, "0 puntos. \r Todas tus respuestas son incorrectas");
+
+var string = doc.output('datauristring');
+
+$('iframe').attr('src', string);
+}
+</script>
+<body>
+    
+    <ul>
+        <li><a> </a></li> <li><a>  </a></li> <li><a>  </a></li> <li><a>  </a></li> <li><a>  </a></li>
+        <li><a> </a></li> <li><a>  </a></li> <li><a>  </a></li> <li><a>  </a></li> <li><a>  </a></li>
+        <li><a> </a></li> <li><a>  </a></li> <li><a>  </a></li> <li><a>  </a></li> <li><a>  </a></li>
+        <li><a> </a></li> <li><a>  </a></li> <li><a>  </a></li> <li><a>  </a></li> <li><a>  </a></li>
+        <li><a> </a></li> <li><a>  </a></li> <li><a>  </a></li> <li><a>  </a></li> <li><a>  </a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Eventos.html">Eventos</a></li>
+        <li><a class="active" href="Contratos.html">Contrataciones</a></li>
+        <li><a href="Pfrecuentes.html" >Preguntas frecuentes</a></li>
+    </ul><br><br>
+<h1 align="center"> Formulario de Contrataciones</h1>
+<table frame="box">
+<thead>
+<tr style="text-align:center">
+    <th>Datos del Conttrato </th>
+    <th colspan="6"></th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+        
+            <td style="width:200px">   </td>
+            <td>
+                <lable for="nombre">Nombre:</lable><br>
+                <input type="text" name="nombre" id="nombre" required/><br><br>
+            </td>
+            <td style="width:200px"> </td>
+            <td>
+                <lable for="apellido">Apellido:</lable><br>
+                <input type="text" name="apellido" id="apellido" required/><br>
+                
+            </td>
+            <td style="width:200px"> </td>
+            <td>
+                <labler for="email">E-mail</labler><br>
+                <input type="email" id="email" name="email" placeholder="Email"><br>
+            </td>
+            <td style="width:200px"> </td>
+        </tr>
+        <tr>
+            <td style="width:200px">   </td>
+            <td>
+                <lable for="">Fecha</lable>
+                <input type="date" name="fecha" id="fecha"/><br>
+            </td>
+            <td style="width:200px"> </td>
+            <td>
+                <lable type="cantidad">Cantidad a Horas</lable><br>
+                <input type="number" name="numero" id="numero"/><br>
+                
+            </td>
+            <td style="width:200px"> </td>
+            <td>
+                <lable for="hor">Hora de inicio/Fin</lable>
+                <input type="text" name="lin" id="lin" placeholder="ej.1:30 / 2:30 pm" required/><br>
+            </td>
+            <td style="width:200px"> </td>
+        </tr>
+        <tr>
+            <td style="width:200px">   </td>
+            <td>
+                <lable for="lin">Lugar</lable>
+                <input type="text" name="hora" id="hora" required/><br>
+            </td>
+            <td style="width:200px"> </td>
+            <td style="width:200px"> </td>
+            <td style="width:200px"> </td>
+            <td style="width:200px"> </td>
+        </tr>
+
+<br><br>
+<table frame="box">
+<tbody>
+    <tr style="text-align:center">
+        <th>Intermediarios</th>
+        <th colspan="6"></th>
+    </tr>
+    <tr> 
+    <td style="width:200px">   </td>
+        <td>
+        <input type="checkbox" name="com" id="com" value="comida"/>
+    <label for="tarjeta">Comida</label><br>
+    </td>
+    <td style="width:200px"> </td>
+    <td>
+        <input type="checkbox" name="misa" id="misa" value="misa" checked/>
+    <label for="debito">Misa</label><br>    
+        </td>
+        <td style="width:200px"> </td>
+        <td>
+        <input type="checkbox" name="ot" id="ot" value="ot"/>
+<lable for="transf">Otros</lable><br>
+    </td>
+    <td style="width:200px"> </td>
+    </tr>
+    <tr>
+        <td style="width:200px">   </td>
+        <td>
+        <input type="checkbox" name="no" id="no" value="no"/>
+        <lable for="transf">No hay</lable><br>
+            </td>
+
+            <td style="width:200px"> </td>
+            <td style="width:200px"> </td>
+            <td style="width:200px"> </td>
+            <td style="width:200px"> </td>
+            <td style="width:200px"> </td>
+
+        </tr>
+
+
+<br><br>
+<table frame="box">
+<tbody>
+<thead>
+        <tr style="text-align:center">
+        <th>Indica tu tipo de evento</th>
+        <th colspan="6"></th></tr>
+    </thead>
+        <tbody>
+        <tr>    
+        <td style="width:200px">   </td>
+           <td>
+            <input type="radio"  name="tipo" id="tipo" />
+    <lable for="tipo1">Privado</lable><br>
+            </td>
+            <td style="width:200px"> </td>
+                <td>
+                    <input type="radio" name="tipo" id="tipo" />
+                    <lable for="tipo2">Publico</lable>
+                    
+                </td>
+                <td style="width:200px"> </td>
+                <td style="width:200px"> </td>
+                <td style="width:200px"> </td>
+                <td style="width:200px"> </td>
+            <td style="width:200px"> </td>
+
+            </tr>
+<thead>
+
+
+<br><br>
+<table frame="box">
+<tbody>
+    <tr style="text-align:center">
+    <th>Solicita Equipo de Audio</th>
+    <th colspan="6"></th></tr></thead>
+<tbody>
+    <tr>    
+    <td style="width:200px">   </td>
+     <td>
+        <input type="radio"  name="aud" id="aud" />
+        <lable for="tipo1">Si</lable><br>
+    </td>
+    <td style="width:200px"> </td>
+    <td>
+        <input type="radio" name="aud" id="aud" />
+        <lable for="tipo2">No</lable><br><br>     
+    </td>
+    <td style="width:200px"> </td>
+    <td style="width:200px"> </td>
+    <td style="width:200px"> </td>
+    </tr>
+
+<br><br>
+<table frame="box">
+<tbody>
+<tr>
+    <td style="width:200px"> </td>
+    <td style="width:200px"> </td>
+    <input type="button" onclick="generar()" value="Generar PDF"/><br/>
+    </form>
+    <p></p>
+    <td style="width:200px"> </td>
+    <td style="width:200px"> </td>
+</tr>
+
+    
+</body>
+</html>
